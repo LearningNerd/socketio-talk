@@ -1,0 +1,32 @@
+
+<!-- <section>
+	<h2>**999-footer.html**</h2>
+	<h2>idea for last slide or class part 2: little voting app, vote on next feature to add!</h2>
+	<p>other mini-app idea: timer that runs in background of challenge slides, that I can set/reset!</p>
+	<p><strong>in part two: show examples of other whiteboard apps, like the music one, the AI one, etc!!</strong>, start part 2 by playing Chrome sports or browser jam!!</p>
+</section> -->
+
+			</div><!-- END OF .slides -->
+		</div><!-- END OF .reveal -->
+
+	<footer class="branding">
+		<a target="_blank" class="button" href="http://learntocodela.org/socketio-workshop/">Workshop Homepage</a>
+		<cite>By <a target="_blank" href="https://twitter.com/LearningNerd">Liz Krane</a> for <a target="_blank" href="http://learntocodela.org/">Learn to Code LA</a></cite>
+	</footer>
+
+	<script src="lib/js/head.min.js"></script>
+	<script src="/reveal.js"></script>
+
+	<script>
+	Reveal.initialize({
+		dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } }
+		]
+		});
+	</script>
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="/local.js"></script>
+</body>
+</html>

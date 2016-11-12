@@ -1,0 +1,44 @@
+<!-- - - - - - - - - - - WEBSOCKET HIGH-LEVEL OVERVIEW - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 class="big" style="margin-bottom:60px;">Congratulations!<br> You now have a real-time web app!</h2>
+	<h2 class="subhead fragment fade-in" style="margin-bottom:40px;">"Uh, OK... That wasn't too exciting."</h2>
+	<h2 class="subhead fragment fade-in" style="font-size:1.3em;margin-bottom:30px;">"What's so special about this whole<br> WebSocket thing, anyway?"</h2>
+</section>
+			<section>
+				<h2 class="subhead">Let's talk about protocols</h2>
+				<h2 style="font-size:2.5em;">HTTP vs WebSocket</h2>
+			</section>
+
+			<section>
+				<p>HTTP's <strong>request-response model </strong> is great for getting lots of information at once, but not so great for having a conversation.</p>
+				<img class="noborder noshadow" src="images/request-response.gif">
+			</section>
+
+			<section>
+				<p><strong>WebSocket</strong> is better for conversations; both the client and the server can send and receive information all at the same time.</p>
+				<img class="noborder noshadow" src="images/websocket-convo.png">
+				<cite>"Listen" icon by Rémy Médard, "Speak" icon by Eðvarð Atli Birgisson, from the Noun Project</cite>
+			</section>
+
+			<section>
+				<div class="halves">
+					<h2>HTTP:</h2>
+					<ul>
+						<li class="fragment highlight-current-blue" data-fragment-index="1">Messages go in one direction at a time (sending or receiving)</li>
+						<li class="fragment highlight-current-blue" data-fragment-index="2">More overhead to send with each message</li>
+						<li class="fragment highlight-current-blue" data-fragment-index="3">Pull model (only the client can initiate)</li>
+						<li class="fragment highlight-current-blue" data-fragment-index="4">Uses http://... URI scheme</li>
+					</ul>
+				</div>
+
+				<div class="halves">
+					<h2>WebSocket:</h2>
+					<ul>
+						<li class="fragment highlight-current-blue" data-fragment-index="1">Messages sent and recieved simultaneously (full duplex)</li>
+						<li class="fragment highlight-current-blue" data-fragment-index="2">Very little overhead for messages once connection is established</li>
+						<li class="fragment highlight-current-blue" data-fragment-index="3">Bidirectional (server can push data on its own)</li>
+						<li class="fragment highlight-current-blue" data-fragment-index="4">Uses ws://... URI scheme</li>
+					</ul>
+				</div>
+			</section>
+<!-- - - - - - - - - - - END of WEBSOCKET HIGH-LEVEL OVERVIEW - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

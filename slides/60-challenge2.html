@@ -1,0 +1,31 @@
+<!-- - - - - - - - - - - - - - - - - CHALLENGE 2  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 style="font-size:1.6em;margin-bottom:50px;">Challenge 2: Combine user input events with SocketIO events</h2>
+	<p style="margin-bottom:50px;">Change your code so that when the user clicks the screen, you use console.log to display the event info object
+		 <em>and you also send it to the server.</em></p>
+	<p class="highlighted-blue"><strong>Hint:</strong> you only need to change the code in one spot in local.js</p>
+</section>
+
+<section>
+	<h2 class="subhead">Time's up!</h2>
+	<h2 class="big">Solution to Challenge 2</h2>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<h3 class="subhead highlighted-red">Solution to challenge 2</h3>
+
+		<pre style="padding-left:10px;">
+var socket = io();
+
+<span class="fragment highlight-current-red" data-fragment-index="0"><span class="fragment highlight-current-red" data-fragment-index="1">document.addEventListener('click', function(<span class="fragment highlight-current-red" data-fragment-index="4">event</span>) {</span>
+	<span class="fragment highlight-current-red" data-fragment-index="2">console.log(<span class="fragment highlight-current-red" data-fragment-index="4">event</span>);</span>
+	<span class="fragment highlight-current-red" data-fragment-index="3">socket.emit('test', <span class="fragment highlight-current-red" data-fragment-index="4">event</span>);</span>
+<span class="fragment highlight-current-red" data-fragment-index="1">});</span></span>
+
+socket.on('test', function(data) {
+	console.log(data);
+});
+		</pre>
+</section>
+<!-- - - - - - - - - - - - - - - - END of CHALLENGE 2 - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - -->

@@ -1,0 +1,67 @@
+<!-- - - - - - - - - - - SETUP AND INSTALLATION - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+			<section>
+				<h2 class="subhead">First, the boring part:</h2>
+				<h2 class="big">Setup and Installation</h2>
+			</section>
+
+			<section>
+				<h2>Download the sample code</h2>
+				<p>Go to the link below, click the green "Clone or download" button, then click "Download ZIP"</p>
+				<p><a href="https://github.com/LearnToCodeLA/paintdemo/tree/starter">https://github.com/LearnToCodeLA/paintdemo/tree/starter</a></p>
+
+				<a href="https://github.com/LearnToCodeLA/paintdemo/tree/starter"><img src="images/samplecode.png"></a>
+			</section>
+
+			<section>
+				<h2>Unzip the project folder</h2>
+				<p>Open up the downloaded .zip file; there will be a folder inside it. Move that folder onto your desktop (or another place where you can find it easily)</p>
+
+				<img src="images/unzip.png">
+			</section>
+
+			<section>
+				<h2>Install NodeJS from <a href="https://nodejs.org/">NodeJS.org</a></h2>
+				<p>Choose the LTS "Recommended for Most Users" version:
+					<a href="https://nodejs.org/"><img src="images/nodejs-install1.png" width="70%"></a>
+			</section>
+
+			<section>
+				<p>Then open the installer and follow the instructions. (Just click "Next" a bunch of times and let it do its thing; all the default settings should be fine.)</p>
+				<img class="noborder" src="images/nodejs-install2.png" width="60%">
+			</section>
+
+			<section>
+				<h2 style="margin-bottom:50px;">Time to geek out in the command line!</h2>
+				<p><strong>Windows:</strong> Open Command Prompt (you can search for it in the Start menu)</p>
+
+				<p><strong>Mac:</strong> Open Terminal (you can search for it in Finder or Spotlight)</p>
+				<img class="halves" src="images/open-commandprompt.png">
+				<img class="halves" src="images/open-terminal.png">
+			</section>
+
+			<section>
+				<p style="width:90%;">To check the version of NodeJS and confirm it installed correctly, type this and hit enter:</p>
+				<pre><code contenteditable="">node -v</code></pre>
+				<img src="images/commandprompt-node-v.png" width="80%">
+			</section>
+
+			<section>
+				<p>Next, <strong>cd</strong> or "Change Directories" to go into the project folder.</p>
+				<p>Here's a nifty trick: type "cd" followed by a space, then drag and drop the folder into the command line and hit enter:</p>
+				<img class="noborder noshadow" src="images/commandprompt-dragndrop.gif" width="90%">
+			</section>
+
+			<section>
+				<h2 style="margin-bottom:40px;">Install Express and SocketIO</h2>
+				<p>Next we'll use <a href="https://www.npmjs.com/">npm</a> to install the dependencies listed in our package.json file by typing this into the command line:</p>
+
+				<pre style="margin:50px;"><code contenteditable="">npm install</code></pre>
+
+				<p>This will download a bunch of stuff and create a "node_modules" folder with all the code needed for <a href="https://expressjs.com/">Express</a> and <a href="https://socket.io/">SocketIO</a>.</p>
+			</section>
+
+			<section>
+				<h2>That's it! You're all set up.</h2>
+				<h2 class="subhead">Now we can start the show!</h2>
+			</section>
+<!-- - - - - - - - - - - END  SETUP AND INSTALLATION - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

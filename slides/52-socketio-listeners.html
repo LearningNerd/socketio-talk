@@ -1,0 +1,60 @@
+<!-- - - - - - - - - - - - - - - - - - - - - SOCKETIO LISTENERS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 class="big">Next up: Events in SocketIO</h2>
+	<h3 class="subhead">You already know how to use them!</h3>
+</section>
+
+<section>
+	<h2 style="margin-bottom:40px;">Breakdown of the <span class="highlight-blue">SocketIO</span> Event Listener</h2>
+
+		<pre style="font-size:1.24em;padding-left:15px;margin:0;width:100%;">
+
+<span class="fragment highlight-current-red" data-fragment-index="0">socket</span>.<span class="fragment highlight-current-red" data-fragment-index="1">on</span>(<span class="fragment highlight-current-red" data-fragment-index="2">'my event'</span>, <span class="fragment highlight-current-red" data-fragment-index="3">myFunction</span>);
+
+function <span class="fragment highlight-current-red" data-fragment-index="3">myFunction</span>(<span class="fragment highlight-current-red" data-fragment-index="4">data</span>) {
+
+	console.log(data);
+
+}
+		</pre>
+<!--
+	***	QUESTION FOR EVERYONE: what does this code do? when does it run?
+-->
+		<p class="fragment fade-out steps" data-fragment-index="0">The SocketIO event listener also has <strong class="highlighted-red">five parts</strong>, and it works the same way!</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="0">
+			<strong class="highlighted-red">Part 1: Where the events will happen</strong> <br>(in this case, the socket object representing the WebSocket connection)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="1">
+			<strong class="highlighted-red">Part 2: Start listening for events</strong> <br>(with SocketIO's "on" method)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="2">
+			<strong class="highlighted-red">Part 3: The type of event</strong> <br>(here we made up our own and gave it a random name)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="3">
+			<strong class="highlighted-red">Part 4: The name of the function to run when the event happens</strong> <br>(known as the "callback" function)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="4">
+			<strong class="highlighted-red">Part 5: Data sent from the other side of the WebSocket connection</strong> <br>(it could be an object, a string, or whatever else)
+		</p>
+
+</section>
+
+<section>
+	<h2 style="margin-bottom:50px;">Anonymous functions also work with SocketIO</h2>
+	<pre style="font-size:1.1em;padding-left:15px;margin:0;width:100%;">
+
+socket.on('my event', <span class="highlighted-red">function(data) {
+	console.log(data);
+}</span>);
+	</pre>
+
+	<p style="margin-top: 45px;">
+		Just like with JavaScript's built-in listeners, if you ever need to <em>remove</em> a SocketIO listener later, it won't work with an anonymous function.
+	</p>
+</section>
+<!-- - - - - - - - - - - - - - - - - - - - END of SOCKETIO LISTENERS - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - -->

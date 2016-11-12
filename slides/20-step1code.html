@@ -1,0 +1,80 @@
+<!-- - - - - - - - - - - FIRST LOOK AT OUR CODE - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 class="subhead">OK, enough talk. Let's dive right in!</h2>
+	<h2 class="big">Step 1: Start a local web server and run the sample code</h2>
+</section>
+
+<section>
+	<h2>Let's take a look at our project files:</h2>
+	<div class="halves">
+		<p>Inside "socketio-paint-demo" folder:</p>
+		<ul>
+			<li>package.json</li>
+			<li>app.js</li>
+			<li>node_modules/</li>
+			<li>public/</li>
+			<ul>
+				<li>index.html</li>
+				<li>local.js</li>
+				<li>style.css</li>
+			</ul>
+		</ul>
+	</div>
+	<img class="halves noborder noshadow" src="images/files.png">
+</section>
+
+<section>
+	<p style="font-size:1.2em; margin-bottom: 50px;">Open up both of these files in your text editor:</p>
+	<div class="halves">
+		<h2>Server Side</h2>
+		<p class="highlighted-blue" style="font-size:1.3em;">app.js</p>
+	</div>
+	<div class="halves">
+		<h2>Client Side</h2>
+		<p class="highlighted-blue" style="font-size:1.3em;">public/local.js</p>
+	</div>
+</section>
+
+<section>
+<!--
+- The require function comes from NodeJS, lets us include code from other files
+- Sets up our libraries, sets the port, runs a web server and serves static files from "public"
+- Black boxes!
+
+But just because it's the first step in the code doesn't mean you need to learn it first!
+You'll understand the rest of this application long before you really understanding how these
+libraries work and how NodeJS and Express sets up a web server -- I don't completely understand it yet either!
+-->
+	<h2>app.js</h2>
+	<h3 class="subhead">Boilerplate code (full of black boxes!) to start our server:</h3>
+	<pre><code class="smaller js" data-trim contenteditable="">
+var express = require('express');	// The require() function includes the code for Express
+var app = express();			// Initialize the Express library
+var http = require('http').Server(app);	// Initialize an HTTP server
+var io = require('socket.io')(http);	// Include and initialize SocketIO
+var port = process.env.PORT || 8000;	// Set the default port number to 8000, or use Heroku's settings (process.env.PORT)
+
+app.use(express.static('public'));	// Tell Express to serve everything in the "public" folder as static files
+
+http.listen(port, function() {				// Activate the server and listen on our specified port number
+	console.log('Listening on port ' + port);	// Display this message in the console once the server is active
+});
+
+io.on('connection', function(socket) {		// When a user connects over websocket:
+	console.log('A user connected!');	// Display this message in the console
+});
+	</code></pre>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<h3 class="subhead">Client code to connect to our server over WebSocket:</h3>
+	<pre><code class="smaller js" data-trim contenteditable="">
+// Start a WebSocket connection with the server using SocketIO
+var socket = io();
+
+// Note that the SocketIO client-side library was imported on line 13 of index.html,
+// and this file (local.js) was imported on line 14 of index.html
+	</code></pre>
+</section>
+<!-- - - - - - - - - - END of FIRST LOOK AT OUR CODE - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - -->

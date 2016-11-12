@@ -1,0 +1,79 @@
+<!-- - - - - - - - - - - - - - - STEP 2 CODE  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 class="big">Step 2: Send and receive data between client and server</h2>
+</section>
+
+<section>
+	<h2>app.js</h2>
+	<h3 class="subhead">Sending and receiving data on the server</h3>
+	<pre><code class="smaller js" data-trim contenteditable="">
+// When a user connects over websocket,
+io.on('connection', function(socket) {
+
+	// Display this message in the server console
+	console.log('A user connected!');
+
+	// Send an event named "test" to every client with io.sockets.emit() function (or just io.emit() for short)
+	// and with this event, send the string 'Hey everyone...' as the data
+	io.sockets.emit('test', 'Hello from the server!');
+
+	// When the server receives an event named "test",
+	socket.on('test', function(data) {
+		// Take whatever data was received and display it in the server console
+		console.log(data);
+	});
+
+});	// End of SocketIO code
+	</code></pre>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<h3 class="subhead">Sending and receiving data on the client</h3>
+	<pre><code class="smaller js" data-trim contenteditable="">
+// Start a WebSocket connection with the server using SocketIO
+var socket = io();
+
+// Send an event named "test" to the server with socket.emit() function
+// and with this event, send the string 'Hi, this is...' as the data
+socket.emit('test', 'Hello from the client!');
+
+// When the client receives an event named "test",
+socket.on('test', function(data) {
+	// Take whatever data was received and display it in the client console
+	console.log(data);
+});
+	</code></pre>
+</section>
+
+<section>
+	<h2 style="margin-bottom:30px;">Now we'll be using <em>two</em> consoles!</h2>
+	<div class="halves">
+		<p>Server Side Console:</p>
+		<p class="highlighted-blue">Command Line</p>
+
+	</div>
+	<div class="halves">
+		<p>Client Side Console:</p>
+		<p class="highlighted-blue">Web Browser</p>
+
+	</div>
+
+	<img src="images/two-consoles.png" class="noborder" style="max-width:100%;">
+</section>
+
+<section>
+	<h2 style="margin-bottom:50px;">Save the changes, restart the app,<br> and open up both consoles</h2>
+	<p><strong>Remember to:</strong></p>
+	<ol>
+		<li>Press <strong>Ctrl + C</strong> in command line to turn off the server</li>
+		<li>Run <strong>node app.js</strong> in command line to turn the server on again</li>
+		<li>And don't forget to refresh your web browser!</li>
+	</ol>
+</section>
+
+<section>
+	<p>You should see something like this:</p>
+	<img src="images/two-console-logs.png" class="noborder" style="max-width:100%;">
+</section>
+<!-- - - - - - - - - - - - - - - - END of STEP 2 CODE - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - -->

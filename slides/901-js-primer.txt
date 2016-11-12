@@ -1,0 +1,136 @@
+
+<!-- - - - - - - - - - - JS PRIMER OR JUST DIVE RIGHT IN ?? - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+			<!-- <section>
+				<h2 class="subhead">Let's start with a refresher:</h2>
+				<h2 class="big">JavaScript in 15 Minutes</h2>
+			</section> -->
+
+
+
+			<!-- <section>
+				<h3 style="margin-bottom: 30px;">How to open your web browser's JavaScript console</h3>
+				<ul>
+					<li><strong>Chrome:</strong> Ctrl + Shift + J or Cmd + Opt + J</li>
+					<li><strong>Firefox:</strong> Ctrl + Shift + K or Cmd + Opt + K</kbd></li>
+					<li><strong>Safari:</strong> Cmd + Opt + C</kbd>
+						<ul><li>
+							<em>Note: first you may need to enable web inspector (<a href="https://developer.apple.com/library/mac/documentation/AppleApplications/Conceptual/Safari_Developer_Guide/GettingStarted/GettingStarted.html">see instructions here</a>)</em>
+						</ul></li>
+					</li>
+				</ul>
+
+				<a href="http://jsforcats.com/"><img style="margin-top:20px;" src="images/console-js-ex.gif"></a>
+
+			</section> -->
+
+
+
+
+
+			<!-- <section>
+				<h2>Let's write some JavaScript together:</h2>
+				<pre><code id="codecast1" class="javascript smaller" data-trim contenteditable="" style="height:450px;">
+// This is a JavaScript comment, a line that starts with "//"
+// Comments are ignored by the computer when running your code.
+// They're great for making notes to yourself or your team!
+
+				</code></pre>
+			</section>
+
+			<section>
+				<div class="halves" style="width: 75%">
+					<pre><code id="codecast2" class="javascript smaller" data-trim contenteditable="" style="height:450px;">
+// Now let's use JavaScript to interact with the HTML!
+
+// First try clicking on the button to the right    > > >
+// It doesn't do anything yet, but we'll fix that!
+
+					</code></pre>
+				</div>
+				<div class="halves" style="margin-top:90px;width: 25%;">
+					<button id="testbutton" style="font-size: 40px; padding: 20px;">Click me!</button>
+  					<p id="testdisplay" style="border: 2px solid black; font-size:30px; padding: 20px; margin-top: 40px;">
+						Display messages here
+					</p>
+				</div>
+			</section> -->
+
+
+
+<!--
+
+<div class="fragment current-visible">
+						<pre><code class="smaller js" data-trim contenteditable="">
+var express = require('express');
+var app = express();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
+var port = process.env.PORT || 8000;
+
+app.use(express.static('public'));
+
+http.listen(port, function(){
+	console.log('Listening on port ' + port);
+});
+
+// Do stuff when user connects over websocket:
+io.on('connection', function(socket){
+	console.log('A user connected!');
+});
+						</code></pre>
+</div>
+
+-->
+
+<!--
+				<section>
+					<h1 style="font-size:1.6em;">Sending stuff from client to server</h1>
+					<div class="halves">
+						<h2>Client</h2>
+						<pre><code class="smaller" data-trim contenteditable="">
+socket.emit('event name here',
+'Sending a message! Or JSON data!'
+);
+						</code></pre>
+					</div>
+
+					<div class="halves">
+						<h2>Server</h2>
+						<pre><code class="smaller" data-trim contenteditable="">
+// Server code (after boilerplate)
+io.on('connection', function(socket){
+
+	socket.on('event name here', function(data){
+		console.log('Message receieved!');
+	});
+
+});
+						</code></pre>
+					</div>
+				</section>
+
+				<section>
+					<h1 style="font-size:1.6em;">Sending stuff from server to client(s)</h1>
+					<div class="halves">
+						<h2>Client</h2>
+						<pre><code class="smaller" data-trim contenteditable="">
+socket.on('event name here ', function(data){
+	console.log('Message recieved: ' + data);
+});
+						</code></pre>
+					</div>
+
+					<div class="halves">
+						<h2>Server</h2>
+						<pre><code class="smaller" data-trim contenteditable="">
+// Server code (after boilerplate)
+io.on('connection', function(socket){
+
+	// send to ALL clients
+	io.emit('event name here', 'Hi all!');
+
+});
+						</code></pre>
+					</div>
+				</section>
+-->

@@ -1,0 +1,52 @@
+<!-- - - - - - - - - - - - - - - - - - CHALLENGE 4  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 style="margin-bottom:25px;">Challenge 4: Group Googling for Mouse Events</h2>
+	<p class="subhead" style="font-size:0.8em;margin-bottom:70px;">Let's learn the way <em>real</em> programmers do it -- with Google!</p>
+	<p><strong>Choose one of the following missions:</strong></p>
+	<ol class="listspaces">
+		<li>Using our "click" event code that we already have, how can we get the mouse coordinates (X and Y position) of where the user clicked and send them to the server?</li>
+		<li>Which <em>three</em> JavaScript events should we use instead of "click" to detect<br> <strong>1)</strong> when a user holds down their mouse button, <strong>2)</strong> moves their mouse, and <strong>3)</strong> lets go of their mouse button?</li>
+	</ol>
+</section>
+
+<section>
+	<h2 class="subhead">Time's up!</h2>
+	<h2 class="big">Solution to Challenge 4</h2>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<h3 class="subhead highlighted-red">Solution to challenge 4, part 1</h3>
+
+		<pre style="font-size:0.8em;padding-left:10px;">
+
+document.addEventListener(<span class="fragment highlight-current-red" data-fragment-index="0">'mousedown'</span>, <span class="fragment highlight-current-red" data-fragment-index="3">startDrawing</span>);
+document.addEventListener(<span class="fragment highlight-current-red" data-fragment-index="1">'mousemove'</span>, <span class="fragment highlight-current-red" data-fragment-index="4">drawStuff</span>);
+document.addEventListener(<span class="fragment highlight-current-red" data-fragment-index="2">'mouseup'</span>, <span class="fragment highlight-current-red" data-fragment-index="5">stopDrawing</span>);
+
+function <span class="fragment highlight-current-red" data-fragment-index="3">startDrawing</span>(event) {
+	// do cool stuff here
+}
+function <span class="fragment highlight-current-red" data-fragment-index="4">drawStuff</span>(event) {
+	// do cool stuff here
+}
+function <span class="fragment highlight-current-red" data-fragment-index="5">stopDrawing</span>(event) {
+	// do cool stuff here
+}
+		</pre>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<h3 class="subhead highlighted-red">Solution to challenge 4, part 2</h3>
+
+		<pre style="font-size:0.7em;padding-left:10px;">
+
+document.addEventListener('click', function(event) {
+	console.log(event);
+	socket.emit('test', <span class="fragment highlight-current-red" data-fragment-index="0">{x: <span class="fragment highlight-current-red" data-fragment-index="1">event.clientX</span>, y: <span class="fragment highlight-current-red" data-fragment-index="2">event.clientY</span>}</span>);
+});
+	</pre>
+</section>
+
+<!-- - - - - - - - - - - - - - - - - END of  CHALLENGE 4 - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - -->

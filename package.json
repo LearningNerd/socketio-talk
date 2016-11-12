@@ -1,0 +1,20 @@
+{
+  "name": "slide-sync-test",
+  "version": "0.0.1",
+  "description": "broadcasting slides with socket.io",
+  "dependencies": {
+    "cookie": "^0.3.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.10.2",
+    "socket.io": "^1.4.8"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.16.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-file-include": "^0.14.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  }
+}

@@ -1,0 +1,87 @@
+<!-- - - - - - - - - - - - - - - - - - - - - - EVENT LISTENERS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 class="subhead">Let's look at some code!</h2>
+	<h2 class="big">JavaScript Events in Action</h2>
+
+</section>
+
+<section>
+	<h2 style="margin-bottom:40px;">Breakdown of the JavaScript Event Listener</h2>
+
+		<pre style="font-size:1.24em;padding-left:15px;margin:0;width:100%;">
+
+<span class="fragment highlight-current-red" data-fragment-index="0">document</span>.<span class="fragment highlight-current-red" data-fragment-index="1">addEventListener</span>(<span class="fragment highlight-current-red" data-fragment-index="2">'click'</span>, <span class="fragment highlight-current-red" data-fragment-index="3">myFunction</span>);
+
+function <span class="fragment highlight-current-red" data-fragment-index="3">myFunction</span>(<span class="fragment highlight-current-red" data-fragment-index="4">event</span>) {
+
+	console.log(event);
+
+}
+		</pre>
+<!--
+	***	QUESTION FOR EVERYONE: what does this code do? when does it run?
+-->
+		<p class="fragment fade-out steps" data-fragment-index="0">There are <strong class="highlighted-red">five parts</strong> to a standard JavaScript event listener</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="0">
+			<strong class="highlighted-red">Part 1: Where the events will happen</strong> <br>(in this case, the whole HTML document object)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="1">
+			<strong class="highlighted-red">Part 2: Start listening for events</strong> <br>(with JavaScript's built-in addEventListener method)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="2">
+			<strong class="highlighted-red">Part 3: The type of event</strong> <br>(see <a href="https://developer.mozilla.org/en-US/docs/Web/Events">this reference list</a> or make up your own)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="3">
+			<strong class="highlighted-red">Part 4: The name of the function to run when the event happens</strong> <br>(known as the "callback" function)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="4">
+			<strong class="highlighted-red">Part 5: This parameter receives an object with info about the event</strong> <br>(different events give you different information)
+		</p>
+
+</section>
+
+<section>
+	<h2 style="margin-bottom:50px;">Anonymous functions work too</h2>
+	<pre style="font-size:1.1em;padding-left:15px;margin:0;width:100%;">
+
+document.addEventListener('click', <span class="highlighted-red">function(event) {
+	console.log(event);
+}</span>);
+	</pre>
+<!--
+	***	LET'S TEST OUT THE CODE RIGHT NOW! PASTE THIS INTO YOUR LOCAL.JS FILE.
+-->
+	<p style="margin-top: 45px;">
+		Just note that if you ever need to <em>remove</em> an event listener later, it won't work with an anonymous function.
+	</p>
+</section>
+
+<section>
+	<h2 style="margin-bottom:40px">Let's test it out, shall we?</h2>
+	<ol class="listspaces" style="margin-bottom:15px;font-size:0.92em;">
+		<li><strong>Copy-paste the code below into local.js</strong> (after your existing code)</li>
+		<li><strong>Restart your app</strong> (Remember: Ctrl + C, "node app.js", refresh the browser)</li>
+		<li><strong>Click somewhere inside your blank web page</strong> (after refreshing the page!)</li>
+		<li><strong>And then check your browser console</strong></li>
+	</ol>
+	<pre style="font-size:1.1em;margin:0;width:100%;"><code class="js" data-trim contenteditable="">
+
+document.addEventListener('click', function(event) {
+	console.log(event);
+});
+	</code></pre>
+</section>
+
+<section>
+	<h2 style="margin-bottom:50px;">Behold! Event data!</h2>
+	<p style="margin-bottom:20px;">
+		You should see a MouseEvent object in the console. Click to expand the data:
+	</p>
+	<img src="images/console-expand-object.gif" width="600">
+</section>
+<!-- - - - - - - - - - - - - - - - - - - - - END of EVENT LISTENERS - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - -->

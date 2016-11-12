@@ -1,0 +1,25 @@
+<!-- - - - - - - - - - - - - - - - MORE SOCKETIO FUNCTIONS  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 class="big" style="margin-bottom:60px;">SocketIO Emit Functions</h2>
+	<div class="halves">
+		<h3 style="font-size:1.7em;">Server:</h3>
+		<ul class="listspaces">
+			<li class="fragment highlight-current-blue" data-fragment-index="1"><strong>socket.emit</strong> - Send event to <em>one particular</em> client</li>
+			<li class="fragment highlight-current-blue" data-fragment-index="2"><strong>socket.broadcast.emit</strong> - Send event to every client <em>except for one particular client</em></li>
+			<li class="fragment highlight-current-blue" data-fragment-index="3"><strong>io.sockets.emit</strong> - Send event to every connected client</li>
+		</ul>
+	</div>
+	<div class="halves">
+		<h3 style="font-size:1.7em;">Client:</h3>
+		<ul class="listspaces">
+			<li class="fragment highlight-current-blue" data-fragment-index="0"><strong>socket.emit</strong> - Send event to server</li>
+		</ul>
+	</div>
+</section>
+
+<!--
+- The client has only one way to send an event: to the server
+- The server has THREE different ways to send an event to one or more clients
+-->
+
+<!-- - - - - - - - - - - - - - - - END of MORE SOCKETIO FUNCTIONS - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - -->

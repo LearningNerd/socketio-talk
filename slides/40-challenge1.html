@@ -1,0 +1,90 @@
+<!-- - - - - - - - - - - - - - - CHALLENGE 1 + SOLUTION - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 class="subhead">Enough talk.</h2>
+	<h2 class="big">Let's get back to the code!</h2>
+</section>
+
+<section>
+	<h2 style="margin-bottom:60px;">Challenge 1: Send objects instead of strings</h2>
+	<p style="margin-bottom:40px;">
+		Locate the second parameter of the <strong>socket.emit</strong> function in both JS files.<br>
+		Replace those strings with objects containing two properties: who sent the message ("server" or "client") and a random number.
+	</p>
+	<p class="highlighted-blue"><strong>Hint:</strong> a JavaScript object looks like this:<br>
+		 {property: value, anotherProperty: anotherValue}</p>
+</section>
+
+<section>
+	<h2 class="subhead">Time's up! That was just a quick warm-up.</h2>
+	<h2 class="big">Solution to Challenge 1</h2>
+</section>
+
+<section>
+	<h2>app.js</h2>
+	<div class="fragment fade-out steps" data-fragment-index="0">
+		<p class="highlighted-red">Previous code (change the highlighted section)</p>
+		<pre class="smaller" style="font-size:0.75em;">
+io.on('connection', function(socket) {
+
+	console.log('A user connected!');
+
+	io.sockets.emit('test', <span class="highlighted-red">'Hello from the server!'</span>);
+
+	socket.on('test', function(data) {
+		console.log(data);
+	});
+
+});
+		</pre>
+	</div>
+
+	<div class="fragment current-visible steps" data-fragment-index="0">
+		<p class="highlighted-red">Solution to challenge 1</p>
+		<pre class="smaller" style="font-size:0.75em;">
+io.on('connection', function(socket) {
+
+	console.log('A user connected!');
+
+	io.sockets.emit('test', <span class="highlighted-red">{sender: 'server', randomNumber: 5}</span>);
+
+	socket.on('test', function(data) {
+		console.log(data);
+	});
+
+});
+		</pre>
+	</div>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<div class="fragment fade-out steps" data-fragment-index="0">
+		<p class="highlighted-red">Previous code (change the highlighted section)</p>
+		<pre class="smaller" style="font-size:0.8em;">
+var socket = io();
+
+socket.emit('test', <span class="highlighted-red">'Hello from the client!'</span>);
+
+socket.on('test', function(data) {
+	console.log(data);
+});
+		</pre>
+	</div>
+	<div class="fragment current-visible steps" data-fragment-index="0">
+		<p class="highlighted-red">Solution to challenge 1</p>
+		<pre class="smaller" style="font-size:0.8em;">
+var socket = io();
+
+socket.emit('test', <span class="highlighted-red">{sender: 'client', randomNumber: 99}</span>);
+
+socket.on('test', function(data) {
+	console.log(data);
+});
+		</pre>
+	</div>
+</section>
+
+<section>
+	<h2 class="big">So what did we just do? How does that code work?</h2>
+</section>
+<!-- - - - - - - - - - - - - - - - END of CHALLENGE 1 + SOLUTION - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - -->

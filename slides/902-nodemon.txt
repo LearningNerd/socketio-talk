@@ -1,0 +1,16 @@
+<!-- - - - - - - - - - - - - - - - - NODEMON YAYY - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+			<section>
+				<h2>Save time with Nodemon!</h2>
+				<p><a href="https://github.com/remy/nodemon">Nodemon</a> is a tool that restarts your NodeJS server every time you change one of your fiels. Very handy!</p>
+				<p>To install it, go to your command line and run this command:</p>
+				<pre style="margin:50px;"><code class="" contenteditable="">npm install -g nodemon</code></pre>
+				<p>Now you can use Nodemon with every project; the "-g" installs it globally.<p>
+			</section>
+
+			<section>
+				<h2>Run with Nodemon</h2>
+				<p>Now instead of using "node app.js" to start your server, you'll run this command:</p>
+				<pre style="margin:50px;"><code class="" contenteditable="">nodemon app.js</code></pre>
+				<p>That will start your server, and now you won't have to restart it after every change. Yay! You'll still have to refresh the browser, but there are other tools for "live reload" to help you there too.<p>
+			</section>
+<!-- - - - - - - - - - - - - - - - - END of NODEMON SECTION - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

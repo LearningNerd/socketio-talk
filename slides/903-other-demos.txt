@@ -1,0 +1,11 @@
+<!-- - - - - - - - - - - OTHER WEBSOCKET DEMOS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+			<section>
+				<h2 style="margin-bottom:25px;">Examples of WebSocket in the Wild</h2>
+				<ul>
+					<li><strong><a href="http://www.jamwithchrome.com/technology">JAM with Chrome</a></strong></li>
+					<li><strong><a href="https://posio.abrenaut.com/">Multiplayer geography game</a></strong> (<a href="https://github.com/abrenaut/posio">See code here</a>)</li>
+					<li><strong><a href="http://browserquest.mozilla.org/">BrowserQuest</a></strong> (<a href="https://github.com/mozilla/BrowserQuest">See code here</a>)</li>
+				</ul>
+				<a href="http://browserquest.mozilla.org/"><img style="margin-top:20px;" src="images/browserquest.jpg"></a>
+			</section>
+<!-- - - - - - - - - - - END of OTHER WEBSOCKET DEMOS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->

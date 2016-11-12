@@ -1,0 +1,32 @@
+<!-- - - - - - - - - - - - - - - - - - - - - SOCKETIO LISTENERS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 class="big">Next up: The SocketIO Event Emitter</h2>
+	<h3 class="subhead">This is how we send (or <em>emit</em>) events</h3>
+</section>
+
+<section>
+	<h2 style="margin-bottom:60px;">Breakdown of the <span class="highlight-blue">SocketIO</span> Event Emitter</h2>
+
+		<pre style="padding-left:15px;margin:0;width:100%;margin-bottom:60px;">
+
+<span class="fragment highlight-current-red" data-fragment-index="0">socket.emit</span>(<span class="fragment highlight-current-red" data-fragment-index="1">'my event'</span>, <span class="fragment highlight-current-red" data-fragment-index="2">myData</span>);
+		</pre>
+<!--
+	***	QUESTION FOR EVERYONE: what does this code do? when does it run?
+-->
+		<p class="fragment fade-out steps" data-fragment-index="0">The SocketIO event emitter <strong>sends events and data</strong> to the client or server.<br> It has <strong class="highlighted-red">three parts</strong>.</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="0">
+			<strong class="highlighted-red">Part 1: The SocketIO object and emitter function</strong> <br>(there are three variations, which we'll look at in the next slide)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="1">
+			<strong class="highlighted-red">Part 2: The event to send</strong> <br>(a string value of our choosing)
+		</p>
+
+		<p class="fragment current-visible steps" data-fragment-index="2">
+			<strong class="highlighted-red">Part 3: The data to send with the event</strong> <br>(as we've seen, it can be an object, a string, or whatever)
+		</p>
+
+</section>
+<!-- - - - - - - - - - - - - - - - - - - - END of SOCKETIO LISTENERS - - - - - - - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - -->
