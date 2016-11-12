@@ -23,42 +23,45 @@
 	<h2 class="big">Solution to Challenge 3</h2>
 </section> -->
 
+
+
 <section>
-	<h2>app.js</h2>
+	<h2>local.js (client)</h2>
+
+		<pre style="padding-left:10px;">
+<span class="fragment highlight-current-red" data-fragment-index="0">var socket = io();</span>
+
+<span class="fragment highlight-current-red" data-fragment-index="1">document.addEventListener('click', function(event) {
+	console.log(event);
+	<span class="fragment highlight-current-red" data-fragment-index="2">socket.emit('test', event);</span>
+});</span>
+
+<span class="fragment highlight-current-red" data-fragment-index="3">socket.on('test', function(data) {
+	console.log(data);
+});</span>
+		</pre>
+</section>
+
+<section>
+	<h2>app.js (server)</h2>
 	<!-- <h3 class="subhead highlighted-red">Solution to challenge 3</h3> -->
 
 		<pre style="padding-left:5px;font-size:0.83em;width:100%;margin:0;">
-io.on('connection', function(socket) {
+// Server boilerplate goes up here, setting up SocketIO, Express, etc
 
-	console.log('A user connected!');
+<span class="fragment highlight-current-red" data-fragment-index="0">io.on('connection', function(socket) {</span>
 
-	io.sockets.emit('test', 'Hello from the server!');
+	<span class="fragment highlight-current-red" data-fragment-index="1">io.sockets.emit('test', 'Hello from the server!');</span>
 
-	socket.on('test', function(data) {
+	<span class="fragment highlight-current-red" data-fragment-index="2">socket.on('test', function(data) {
 		console.log(data);
-		<span class="fragment highlight-current-red" data-fragment-index="0"><span class="fragment highlight-current-red" data-fragment-index="1">socket.emit</span>('test', <span class="fragment highlight-current-red" data-fragment-index="2">'I saw you click!'</span>);
-		<span class="fragment highlight-current-red" data-fragment-index="3">socket.broadcast.emit</span>('test', <span class="fragment highlight-current-red" data-fragment-index="4">'Off with their head!'</span>);</span>
-	});
+		<span class="fragment highlight-current-red" data-fragment-index="3"><span class="fragment highlight-current-red" data-fragment-index="4">socket.emit</span>('test', <span class="fragment highlight-current-red" data-fragment-index="4">'I saw you click!'</span>);
+		<span class="fragment highlight-current-red" data-fragment-index="5">socket.broadcast.emit</span>('test', <span class="fragment highlight-current-red" data-fragment-index="5">'Off with their head!'</span>);</span>
+	});</span>
 });
 		</pre>
 </section>
 
-<section>
-	<h2>local.js</h2>
-
-		<pre style="padding-left:10px;">
-var socket = io();
-
-<span class="fragment highlight-current-red" data-fragment-index="0"><span class="fragment highlight-current-red" data-fragment-index="1">document.addEventListener('click', function(<span class="fragment highlight-current-red" data-fragment-index="4">event</span>) {</span>
-	<span class="fragment highlight-current-red" data-fragment-index="2">console.log(<span class="fragment highlight-current-red" data-fragment-index="4">event</span>);</span>
-	<span class="fragment highlight-current-red" data-fragment-index="3">socket.emit('test', <span class="fragment highlight-current-red" data-fragment-index="4">event</span>);</span>
-<span class="fragment highlight-current-red" data-fragment-index="1">});</span></span>
-
-socket.on('test', function(data) {
-	console.log(data);
-});
-		</pre>
-</section>
 
 <section>
 	<h2 class="subhead">Congratulations, coding ninja!</h2>
