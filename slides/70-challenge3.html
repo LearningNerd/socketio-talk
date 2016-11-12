@@ -1,12 +1,12 @@
 <!-- - - - - - - - - - - - - - - - - - CHALLENGE 3  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
 <section>
 	<h2 style="margin-bottom:40px;">Simulating multiple clients locally</h2>
-	<p>For the next challenge, you'll need to open <em>at least two</em> instances of your app, each with its own web console, to test your app with multiple clients.</p>
+	<p>Now you'll need to open two instances of your app to test it!</p>
 	<img src="images/two-clients.png" class="">
 	<p>You can use two browser tabs or make two separate windows side-by-side.</p>
 </section>
 
-<section>
+<!-- <section>
 	<h2 style="font-size:1.3em;margin-bottom:50px;">Challenge 3: Reply to users with new SocketIO functions</h2>
 	<p>Change your <strong><em>server-side</em></strong> code so that when the server receives<br> the event named <strong>"test"</strong>,
 		 it does two more things:
@@ -21,11 +21,11 @@
 <section>
 	<h2 class="subhead">Time's up!</h2>
 	<h2 class="big">Solution to Challenge 3</h2>
-</section>
+</section> -->
 
 <section>
 	<h2>app.js</h2>
-	<h3 class="subhead highlighted-red">Solution to challenge 3</h3>
+	<!-- <h3 class="subhead highlighted-red">Solution to challenge 3</h3> -->
 
 		<pre style="padding-left:5px;font-size:0.83em;width:100%;margin:0;">
 io.on('connection', function(socket) {
@@ -39,6 +39,23 @@ io.on('connection', function(socket) {
 		<span class="fragment highlight-current-red" data-fragment-index="0"><span class="fragment highlight-current-red" data-fragment-index="1">socket.emit</span>('test', <span class="fragment highlight-current-red" data-fragment-index="2">'I saw you click!'</span>);
 		<span class="fragment highlight-current-red" data-fragment-index="3">socket.broadcast.emit</span>('test', <span class="fragment highlight-current-red" data-fragment-index="4">'Off with their head!'</span>);</span>
 	});
+});
+		</pre>
+</section>
+
+<section>
+	<h2>local.js</h2>
+
+		<pre style="padding-left:10px;">
+var socket = io();
+
+<span class="fragment highlight-current-red" data-fragment-index="0"><span class="fragment highlight-current-red" data-fragment-index="1">document.addEventListener('click', function(<span class="fragment highlight-current-red" data-fragment-index="4">event</span>) {</span>
+	<span class="fragment highlight-current-red" data-fragment-index="2">console.log(<span class="fragment highlight-current-red" data-fragment-index="4">event</span>);</span>
+	<span class="fragment highlight-current-red" data-fragment-index="3">socket.emit('test', <span class="fragment highlight-current-red" data-fragment-index="4">event</span>);</span>
+<span class="fragment highlight-current-red" data-fragment-index="1">});</span></span>
+
+socket.on('test', function(data) {
+	console.log(data);
 });
 		</pre>
 </section>

@@ -1,0 +1,340 @@
+
+<!-- - - - - - - - - - - - - - - - - END of  CHALLENGE 4 - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 class="big">Time for a Quick Review</h2>
+</section>
+<!-- - - - - - - - - - - - - - - - MORE SOCKETIO FUNCTIONS  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 class="big" style="margin-bottom:60px;">SocketIO Functions</h2>
+	<div class="halves">
+		<h3 style="font-size:1.7em;">Server:</h3>
+		<ul class="listspaces">
+			<li class="fragment highlight-current-blue" data-fragment-index="0"><strong>socket.on</strong> - Listen for events</li>
+			<li class="fragment highlight-current-blue" data-fragment-index="1"><strong>socket.emit</strong> - Send event to <em>one particular</em> client</li>
+			<li class="fragment highlight-current-blue" data-fragment-index="2"><strong>socket.broadcast.emit</strong> - Send event to every client <em>except for one particular client</em></li>
+			<li class="fragment highlight-current-blue" data-fragment-index="3"><strong>io.sockets.emit</strong> - Send event to every connected client</li>
+		</ul>
+	</div>
+	<div class="halves">
+		<h3 style="font-size:1.7em;">Client:</h3>
+		<ul class="listspaces">
+			<li class="fragment highlight-current-blue" data-fragment-index="0"><strong>socket.on</strong> - Listen for events</li>
+			<li class="fragment highlight-current-blue" data-fragment-index="1"><strong>socket.emit</strong> - Send event to server</li>
+		</ul>
+	</div>
+</section>
+
+<!--
+- The client has only one way to send an event: to the server
+- The server has THREE different ways to send an event to one or more clients
+-->
+
+<!-- - - - - - - - - - - - - - - - END of MORE SOCKETIO FUNCTIONS - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - - OVERVIEW CANVAS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 class="subhead">Now let's get artistic!</h2>
+	<h2 class="big">Drawing with the Canvas API</h2>
+</section>
+
+<section>
+	<h2>index.html</h2>
+	<h3 class="subhead">Our HTML page with the canvas element:</h3>
+	<pre><code class="smaller html" data-trim contenteditable="">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Interactive Painting App Demo&lt;/title&gt;
+    &lt;meta charset=&quot;utf-8&quot;&gt;
+    &lt;link rel=&quot;stylesheet&quot; href=&quot;style.css&quot;&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+
+    &lt;canvas id=&quot;mycanvas&quot; width=&quot;5000&quot; height=&quot;5000&quot;&gt;&lt;/canvas&gt;
+
+    &lt;script src=&quot;/socket.io/socket.io.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;local.js&quot;&gt;&lt;/script&gt;
+
+  &lt;/body&gt;
+&lt;/html&gt;
+	</code></pre>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<h3 class="subhead">Try out this code and see what happens:</h3>
+	<pre><code class="smaller js" data-trim contenteditable="">
+// Create a variable for the web page's canvas element, which has id="mycanvas":
+var canvas = document.getElementById('mycanvas');
+
+// Create a variable to access the two-dimensional canvas drawing functions
+var pen = canvas.getContext('2d');
+
+pen.beginPath();	// Initialize
+pen.moveTo(0,0);	// Choose starting coordinates (top left corner of canvas)
+pen.lineTo(500,500);	// Choose ending coordinates (500 pixels from top, 500 pixels from left)
+pen.stroke();		// Draw the line
+	</code></pre>
+</section>
+
+<section>
+	<h2 class="big" style="margin-bottom:50px;">Congrats, you drew a line!</h2>
+	<iframe class="noborder noshadow" height='600' scrolling='no' src='//codepen.io/LearnToCodeLA/embed/VKApaP/?height=600&theme-id=dark&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/LearnToCodeLA/pen/VKApaP/'>VKApaP</a> by Learn to Code LA (<a href='http://codepen.io/LearnToCodeLA'>@LearnToCodeLA</a>) on <a href='http://codepen.io'>CodePen</a>.
+	</iframe>
+</section>
+
+<section>
+	<h2 style="margin-bottom:40px;">Four Canvas Functions to Draw a Line</h2>
+
+	<p style="font-size:0.85em;margin-bottom:40px;">Once you have access to an HTML canvas element and you've created a 2D drawing context ( the "pen" object here), you need these four functions <strong>in this order</strong> to draw a line:</p>
+
+	<ol class="listspaces">
+		<li class="fragment highlight-current-blue"><strong>pen.beginPath()</strong> -- Pick up your pen!</li>
+		<li class="fragment highlight-current-blue"><strong>pen.moveTo(x, y)</strong> -- Choose start position</li>
+		<li class="fragment highlight-current-blue"><strong>pen.lineTo(x, y)</strong> -- Choose end position</li>
+		<li class="fragment highlight-current-blue"><strong>pen.stroke()</strong> -- Make the line visible!</li>
+	</ol>
+</section>
+
+<!-- - - - - - - - - - - - - - - - END of  OVERVIEW CANVAS - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - - CHALLENGE 5  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2>Get ready for the next challenge...</h2>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<h3 class="subhead">Copy-paste this into your local.js file for the next challenge:</h3>
+	<pre><code class="smaller js" data-trim contenteditable="">
+// Start a WebSocket connection with the server using SocketIO
+var socket = io();
+
+// Create a variable for the web page's canvas element, which has id="mycanvas"
+var canvas = document.getElementById('mycanvas');
+
+// Create a variable to access the two-dimensional canvas drawing functions
+var pen = canvas.getContext('2d');
+
+// Set event listeners for when the mouse button is pressed down, when the mouse moves, and when the mouse button is released
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mousemove', drawStuff);
+canvas.addEventListener('mouseup', stopDrawing);
+
+function startDrawing(event) {
+	console.log("START: " + event.clientX + ", " + event.clientY);
+
+	// Which canvas drawing functions should go here??
+	// HINT: start with pen.beginPath();
+
+}
+
+function drawStuff(event) {
+	console.log("Moved to: " + event.clientX + ", " + event.clientY);
+
+	// Which canvas drawing functions should go here?? (or none at all?)
+
+}
+
+function stopDrawing(event) {
+	console.log("STOP: " + event.clientX + ", " + event.clientY);
+
+	// Which canvas drawing functions should go here?? (or none at all?)
+
+}
+
+	</code></pre>
+</section>
+
+<section>
+	<h2 style="margin-bottom:40px;">Challenge 5: Put It (Almost) All Together!</h2>
+	<p style="margin-bottom:40px;">See if you can combine the code we have so far in <strong>local.js</strong> with the canvas functions to make it draw wherever you move your mouse!</p>
+	<p class="highlighted-blue"><strong>Hint:</strong> There are <em>four</em> drawing functions and <em>three</em> functions you could put them in (startDrawing, drawStuff, and stopDrawing)<br> ...so if in doubt, try every possible combination!</p>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<h3 class="subhead highlighted-red">One possible solution to challenge 5, part 1:</h3>
+
+		<pre style="font-size:0.7em;padding-left:10px;">
+
+var socket = io();
+
+var canvas = document.getElementById('mycanvas');
+var pen = canvas.getContext('2d');
+
+canvas.addEventListener('mousedown', startDrawing);
+canvas.addEventListener('mousemove', drawStuff);
+canvas.addEventListener('mouseup', stopDrawing);
+
+<span class="highlighted-red">var isDrawing = false;</span>
+	</pre>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<h3 class="subhead">One possible solution to challenge 5, <span class="highlighted-red">part 2:</span></h3>
+
+		<pre style="font-size:0.7em;padding-left:10px;">
+
+function startDrawing(event) {
+	console.log("START: " + event.clientX + ", " + event.clientY);
+	<span class="highlighted-red">isDrawing = true;
+	pen.beginPath();
+	pen.moveTo(event.clientX, event.clientY );</span>
+
+}
+	</pre>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<h3 class="subhead">One possible solution to challenge 5, <span class="highlighted-red">part 3:</span></h3>
+
+		<pre style="font-size:0.7em;padding-left:10px;">
+
+function drawStuff(event) {
+	console.log("Moved to: " + event.clientX + ", " + event.clientY);
+	<span class="highlighted-red">if (isDrawing) {
+		pen.lineTo(event.clientX, event.clientY);
+		pen.stroke();
+	}</span>
+}
+
+function stopDrawing(event) {
+	console.log("STOP: " + event.clientX + ", " + event.clientY);
+	<span class="highlighted-red">isDrawing = false;</span>
+}
+	</pre>
+</section>
+<!-- - - - - - - - - - - - - - - - - END of  CHALLENGE 5 - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - - EMIT,  AFTER CHALLENGE 5  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 style="margin-bottom:40px;">Let's plan how we'll send our data to the server</h2>
+	<p>First question: which function should we use?</p>
+	<p class="fragment highlighted-blue"><strong>socket.emit</strong></p>
+	<p class="fragment">How many events do we need to send to the server for drawing lines?</p>
+	<p class="fragment highlighted-blue"><strong>Two events</strong>: <strong>"mousedown"</strong> and <strong>"mousemove"</strong></p>
+	<p class="fragment">What data do we need to send with these events?</p>
+	<p class="fragment highlighted-blue">Mouse coordinates. Something like this: <strong>{x: event.clientX, y: event.clientY}</strong></p>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<h3 class="subhead">Using socket.emit to send data to server, <span class="highlighted-red">part 1:</span></h3>
+
+		<pre style="font-size:0.67em;padding-left:10px;">
+function startDrawing(event) {
+	console.log("START: " + event.clientX + ", " + event.clientY);
+	isDrawing = true;
+	pen.beginPath();
+	pen.moveTo(event.clientX, event.clientY );
+	<span class="highlighted-red">socket.emit('mousedown', {x: event.clientX, y: event.clientY});</span>
+}
+	</pre>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<h3 class="subhead">Using socket.emit to send data to server, <span class="highlighted-red">part 2:</span></h3>
+
+		<pre style="font-size:0.65em;padding-left:10px;">
+function drawStuff(event) {
+	console.log("Moved to: " + event.clientX + ", " + event.clientY);
+	if (isDrawing) {
+		pen.lineTo(event.clientX, event.clientY);
+		pen.stroke();
+		<span class="highlighted-red">socket.emit('mousedown', {x: event.clientX, y: event.clientY});</span>
+	}
+}
+	</pre>
+</section>
+<!-- - - - - - - - - - - - - - - - - END of EMIT, AFTER CHALLENGE 5 - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - - SERVER RECEIVING CODE  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 style="margin-bottom:40px;">Now, the server needs to receive and broadcast our events!</h2>
+	<p>Which function should we use in app.js for the server to <strong>receive</strong> our data?</p>
+	<p class="fragment highlighted-blue"><strong>socket.on</strong></p>
+	<p class="fragment">How many events does our server need to <strong>receive</strong>?</p>
+	<p class="fragment highlighted-blue"><strong>Two events</strong>: <strong>"mousedown"</strong> and <strong>"mousemove"</strong></p>
+	<p class="fragment">Which function should we use on the server to <strong>send</strong> the data to <em>all other clients</em>?</p>
+	<p class="fragment highlighted-blue"><strong>socket.broadcast.emit</strong></p>
+</section>
+
+<section>
+	<h2>app.js</h2>
+	<h3 class="subhead">Receiving and broadcasting from the server:</h3>
+
+		<pre style="font-size:0.67em;padding-left:10px;">
+
+// all other app.js boilerplate code is still above here
+
+io.on('connection', function(socket) {
+
+	socket.on(<span class="fragment highlight-current-red" data-fragment-index="0">'mousedown'</span>, function(data) {
+		console.log(data);
+		<span class="fragment highlight-current-red" data-fragment-index="1">socket.broadcast.emit('mousedown', data);</span>
+	});
+
+	socket.on(<span class="fragment highlight-current-red" data-fragment-index="0">'mousemove'</span>, function(data) {
+		console.log(data);
+		<span class="fragment highlight-current-red" data-fragment-index="1">socket.broadcast.emit('mousemove', data);</span>
+	});
+
+});
+	</pre>
+</section>
+<!-- - - - - - - - - - - - - - - - - END of SERVER RECEIVING CODE - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - -->
+<!-- - - - - - - - - - - - - - - - - - DRAW FROM BROADCST  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -->
+<section>
+	<h2 style="margin-bottom:40px;">Last step: the clients still need to receive data from the server!!</h2>
+	<p>Which function should we use in local.js so that all clients can <strong>receive</strong> data from the server?</p>
+	<p class="fragment highlighted-blue"><strong>socket.on</strong></p>
+	<p class="fragment">How many events do our clients need to <strong>receive</strong>?</p>
+	<p class="fragment highlighted-blue"><strong>Two events</strong>: <strong>"mousedown"</strong> and <strong>"mousemove"</strong></p>
+	<p class="fragment">What should the client code do when receiving these two events?</p>
+	<p class="fragment highlighted-blue">Draw lines exactly the same way as we did before!</p>
+</section>
+
+<section>
+	<h2>local.js</h2>
+	<h3 class="subhead">Receiving data from the server and drawing lines:</h3>
+
+		<pre style="font-size:0.67em;padding-left:10px;">
+
+// Add this to the bottom of your local.js file:
+
+socket.on(<span class="fragment highlight-current-red" data-fragment-index="0">'mousedown'</span>, function(<span class="fragment highlight-current-red" data-fragment-index="1">data</span>) {
+	pen.beginPath();
+	pen.moveTo(<span class="fragment highlight-current-red" data-fragment-index="1">data.x</span>, <span class="fragment highlight-current-red" data-fragment-index="2">data.y</span>);
+});
+
+socket.on(<span class="fragment highlight-current-red" data-fragment-index="0">'mousemove'</span>, function(<span class="fragment highlight-current-red" data-fragment-index="1">data</span>) {
+	pen.lineTo(<span class="fragment highlight-current-red" data-fragment-index="1">data.x</span>, <span class="fragment highlight-current-red" data-fragment-index="2">data.y</span>);
+	pen.stroke();
+});
+	</pre>
+</section>
+
+
+
+<!--
+NEXT SECTIONS:
+
+- test it live, see the bug, discuss for a minute how to fix it
+
+- interpolation as the solution to this bug and also making our app less laggy!
+	- show: dot moving over time, saving last dot and current dot
+	- GIVE the code in steps / walk through it in steps
+	- animated GIF of what's happening??? compare broken vs new code??
+
+- LAST: everyone star the github repo, add an issue on the github for ideas for next features!
+
+-->
+
+
+<!-- - - - - - - - - - - - - - - - - END of DRAW FROM BROADCST - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - -->
+
+<section>
+	<h2 style="margin-bottom:50px;"><a href="https://github.com/LearnToCodeLA/socketio-paint-demo">Click here to view the final code!</a></h2>
+</section>
+<!-- - - - - - - - - - - - - - - - - END of FIX THAT BUG - - - - - - - - - - - - - - -  - - - - - - - - - - - - - - - - - - - - -->
